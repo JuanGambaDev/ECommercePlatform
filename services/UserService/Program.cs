@@ -1,4 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using UserService.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<UserServiceContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
 

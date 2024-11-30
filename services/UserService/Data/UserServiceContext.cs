@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using UserService.Model;
+using UserService.Models;
 
 namespace UserService.Data;
 
@@ -15,7 +15,7 @@ public class UserServiceContext : DbContext {
         (
             User =>
             {
-                User.ToTable("Users");
+                User.ToTable("user_ecommerce");
                 User.HasKey(u => u.UserId);
                 User.Property(u => u.UserId).ValueGeneratedOnAdd();
                 User.Property(u => u.Name).IsRequired().HasMaxLength(100);
@@ -29,7 +29,7 @@ public class UserServiceContext : DbContext {
         (
             RefreshToken =>
             {
-                RefreshToken.ToTable("RefreshTokens");
+                RefreshToken.ToTable("refresh_tokens");
                 RefreshToken.HasKey(t => t.TokenId);
                 RefreshToken.Property(t => t.TokenId).ValueGeneratedOnAdd();
                 RefreshToken.Property(t => t.Token).IsRequired().HasMaxLength(600);

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace UserService.Model;
+namespace UserService.Models;
 
 public class RefreshToken {
 
